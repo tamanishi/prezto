@@ -9,3 +9,11 @@
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+# path
+export GOPATH=${HOME}
+export PATH=${PATH}:${GOPATH}/bin
+export PATH=${PATH}:${HOME}/Library/Android/sdk/platform-tools
+export PATH="/usr/local/opt/mysql-client/bin:${PATH}"
+source ~/.cargo/env
+
