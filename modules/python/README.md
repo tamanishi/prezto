@@ -6,13 +6,19 @@ Enables local Python and local Python package installation.
 Settings
 --------
 
-This module supports virtual environments from conda and virtualenvwrapper. By default, only virtualenvwrapper is enabled. To disable virtualenvwrapper, add the following to *zpreztorc*.
+This module supports virtual environments from conda and virtualenvwrapper. By
+default, only virtualenvwrapper is enabled. To disable virtualenvwrapper, add
+the following to *zpreztorc*.
 
-    zstyle ':prezto:module:python' skip-virtualenvwrapper-init 'on'
+```sh
+zstyle ':prezto:module:python' skip-virtualenvwrapper-init 'on'
+```
 
 Conda support is enabled by adding the following to *zpreztorc*.
 
-    zstyle ':prezto:module:python' conda-init 'on'
+```sh
+zstyle ':prezto:module:python' conda-init 'on'
+```
 
 Caution: using conda and virtualenvwrapper at the same time may cause conflicts.
 
@@ -48,8 +54,8 @@ virtualenvwrapper
 
 [`virtualenvwrapper`][2] is a frontend to the popular [`virtualenv`][3] utility.
 
-`virtualenv` creates isolated Python environments and `virtualenvwrapper` provides
-convenient shell functions to create, switch, and manage them.
+`virtualenv` creates isolated Python environments and `virtualenvwrapper`
+provides convenient shell functions to create, switch, and manage them.
 
 ### Usage
 
@@ -106,7 +112,7 @@ zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
 (`$VIRTUALENVWRAPPER_VIRTUALENV` is explicitly set or `virtualenv` is in
 `$PATH`). This can be disabled with:
 
-```
+```sh
 zstyle ':prezto:module:python:virtualenv' initialize 'no'
 ```
 
@@ -134,6 +140,10 @@ following style in the `prompt_name_setup` function.
 
 Then add `$python_info[virtualenv]` to `$PROMPT` or `$RPROMPT` and call
 `python-info` in the `prompt_name_preexec` hook function.
+
+Similarly, you can use `:prezto:module:python:info:version:format` with `%v` for
+the version and add `$python_info[version]` to your prompt for the current
+python version/
 
 Authors
 -------
